@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaStore - E-commerce</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topo">
+        <a class="logo" href="#" aria-label="NovaStore">
+            Nova<span>Store</span>
+        </a>
+
+        <div class="busca">
+            <input id="campoBusca" type="search" placeholder="Buscar produtos">
+            <button id="botaoBusca" type="button">Buscar</button>
+        </div>
+
+        <div class="acoes-topo">
+            <button id="botaoTema" class="botao-secundario" type="button">Tema</button>
+            <button id="abrirCarrinho" class="botao-carrinho" type="button">
+                Carrinho
+                <span id="contadorCarrinho">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="faixa-oferta">
+            <div>
+                <p class="etiqueta">Ofertas da semana</p>
+                <h1>Produtos selecionados para comprar agora</h1>
+            </div>
+            <p class="frete">Frete gratis acima de R$ 299,00</p>
+        </section>
+
+        <section class="controles">
+            <div class="categorias" aria-label="Categorias">
+                <button class="ativo" type="button" data-categoria="todos">Todos</button>
+                <button type="button" data-categoria="tecnologia">Tecnologia</button>
+                <button type="button" data-categoria="moda">Moda</button>
+                <button type="button" data-categoria="casa">Casa</button>
+                <button type="button" data-categoria="esporte">Esporte</button>
+            </div>
+
+            <label class="ordenacao">
+                Ordenar
+                <select id="ordenarProdutos">
+                    <option value="destaque">Destaque</option>
+                    <option value="menor-preco">Menor preco</option>
+                    <option value="maior-preco">Maior preco</option>
+                    <option value="avaliacao">Melhor avaliacao</option>
+                </select>
+            </label>
+        </section>
+
+        <section>
+            <div class="cabecalho-vitrine">
+                <h2>Vitrine</h2>
+                <span id="totalProdutos"></span>
+            </div>
+
+            <div id="listaProdutos" class="grade-produtos"></div>
+        </section>
+    </main>
+
+    <aside id="carrinho" class="carrinho" aria-label="Carrinho de compras">
+        <div class="carrinho-topo">
+            <h2>Carrinho</h2>
+            <button id="fecharCarrinho" class="botao-icone" type="button" aria-label="Fechar carrinho">X</button>
+        </div>
+
+        <div id="itensCarrinho" class="itens-carrinho"></div>
+
+        <div class="resumo-carrinho">
+            <div>
+                <span>Subtotal</span>
+                <strong id="subtotalCarrinho">R$ 0,00</strong>
+            </div>
+            <div>
+                <span>Frete</span>
+                <strong id="freteCarrinho">R$ 0,00</strong>
+            </div>
+            <div class="total">
+                <span>Total</span>
+                <strong id="totalCarrinho">R$ 0,00</strong>
+            </div>
+            <button id="finalizarCompra" class="botao-finalizar" type="button">Finalizar compra</button>
+        </div>
+    </aside>
+
+    <div id="overlay" class="overlay"></div>
+
+    <div id="mensagemCompra" class="mensagem-compra" role="status" aria-live="polite">
+        Pedido criado com sucesso!
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
